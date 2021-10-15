@@ -5,6 +5,7 @@ const QuestionContainer = () => {
 
     const [questions, setQuestions] = useState([])
     const [currentQuestion, setCurrentQuestion] = useState([])
+    const [answer, setAnswer] = useState(null)
 
     const getQuestions = () => {
         fetch('https://opentdb.com/api.php?amount=30&category=9&difficulty=medium')
@@ -24,12 +25,16 @@ const QuestionContainer = () => {
         getRandomQuestion()
     })
 
+    const onAnswerSelect = (answer) => {
+        setAnswer(answer)
+    }
+
 
 
     return(
         <div class="container">
             <h1>QuestionContainer</h1>
-            <QuestionBox currentQuestion={currentQuestion} /> 
+            <QuestionBox currentQuestion={currentQuestion} onAnswerSelect={onAnswerSelect}/> 
         </div>
     )
 }
