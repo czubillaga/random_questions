@@ -36,3 +36,14 @@
     transform: rotate(360deg);
   }
 }
+
+.container {
+  border: 2px solid black;
+  margin: 20vw;
+}
+
+.question-box {
+  border: 2px solid black;
+  margin: 5vw;
+}
+
